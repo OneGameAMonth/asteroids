@@ -27,6 +27,7 @@ RECOVER_*.fla
 # Folders
 html-template/
 output/
+debug/
 third-party/
 
 # Files
