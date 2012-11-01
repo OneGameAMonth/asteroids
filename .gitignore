@@ -1,0 +1,34 @@
+# OS X
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
+
+# Intelli J
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Flash Builder
+bin-debug/
+target/
+.actionScriptProperties
+.flexLibProperties
+.project
+
+# Flash IDE
+RECOVER_*.fla
+
+# Folders
+html-template/
+output/
+third-party/
+
+# Files
+sdk.local.properties
+build.local.properties
