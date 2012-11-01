@@ -8,43 +8,53 @@
 package com.garfty.asteroids
 {
 
-  import com.garfty.asteroids.bootstrap.commands.ConfigureStateMachineCommand;
-  import com.garfty.asteroids.logger.BasicLogger;
-  import com.garfty.asteroids.logger.ILogger;
+	import com.garfty.asteroids.application.models.vo.ApplicationStateMachineVO;
+	import com.garfty.asteroids.bootstrap.commands.ConfigureApplicationStateMachineCommand;
+	import com.garfty.asteroids.bootstrap.utils.ApplicationBootstrapConstants;
+	import com.garfty.asteroids.logger.BasicLogger;
+	import com.garfty.asteroids.logger.ILogger;
 
-  import org.robotlegs.base.ContextEvent;
-  import org.robotlegs.mvcs.StarlingSignalContext;
+	import org.robotlegs.base.ContextEvent;
+	import org.robotlegs.mvcs.StarlingSignalContext;
 
-  import starling.display.DisplayObjectContainer;
+	import starling.display.DisplayObjectContainer;
 
-  public class AsteroidsContext extends StarlingSignalContext
-  {
-    protected var _logger:ILogger;
+	public class AsteroidsContext extends StarlingSignalContext
+	{
+		protected var _logger:ILogger;
 
-    public function AsteroidsContext(contextView:DisplayObjectContainer, autoStartup:Boolean = true)
-    {
-      super(contextView, autoStartup);
-      initialiseStartup();
-    }
+		protected var _stateMachineXML:XML;
 
 
-    private function initialiseStartup():void
-    {
-      _logger = injector.instantiate(BasicLogger);
-      _logger.info("Starting Asteroids");
-      injector.mapValue(ILogger, _logger);
+		public function AsteroidsContext(contextView:DisplayObjectContainer, autoStartup:Boolean = true)
+		{
+			super(contextView, autoStartup);
 
-      commandMap.mapEvent(ContextEvent.STARTUP, ConfigureStateMachineCommand, ContextEvent, true);
-      dispatchEvent(new ContextEvent(ContextEvent.STARTUP));
+			_stateMachineXML = ApplicationBootstrapConstants.applicationStateMachineXML;
 
-      startup();
-    }
+			injector.mapValue(ApplicationStateMachineVO, new ApplicationStateMachineVO(_stateMachineXML));
+
+			initialiseStartup();
+		}
 
 
-    override public function startup():void
-    {
-      super.startup();
-      commandMap.unmapEvent(ContextEvent.STARTUP, ConfigureStateMachineCommand, ContextEvent);
-    }
-  }
+		private function initialiseStartup():void
+		{
+			_logger = injector.instantiate(BasicLogger);
+			_logger.info("Starting Asteroids");
+			injector.mapValue(ILogger, _logger);
+
+			commandMap.mapEvent(ContextEvent.STARTUP, ConfigureApplicationStateMachineCommand, ContextEvent, true);
+			dispatchEvent(new ContextEvent(ContextEvent.STARTUP));
+
+			startup();
+		}
+
+
+		override public function startup():void
+		{
+			super.startup();
+			commandMap.unmapEvent(ContextEvent.STARTUP, ConfigureApplicationStateMachineCommand, ContextEvent);
+		}
+	}
 }
