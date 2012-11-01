@@ -4,11 +4,19 @@
  */
 package com.garfty.asteroids.game.commands
 {
-	public class HandleLevelCompleteCommand
+	import org.robotlegs.mvcs.StarlingSignalCommand;
+
+	public class HandleLevelCompleteCommand extends StarlingSignalCommand
 	{
 		public function HandleLevelCompleteCommand()
 		{
 			super();
+		}
+
+
+		override public function execute():void
+		{
+			super.execute();
 		}
 	}
 }

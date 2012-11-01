@@ -13,9 +13,6 @@ package com.garfty.asteroids.application.commands
 	{
 		[Inject]
 		public var logger:ILogger;
-		
-		[Inject]
-		public var stateMachineXML:ApplicationStateMachineVO;
 
 		public function StartUpCompleteCommand()
 		{

@@ -4,9 +4,9 @@
  */
 package com.garfty.asteroids.game.commands
 {
-	import org.robotlegs.mvcs.StarlingCommand;
+	import org.robotlegs.mvcs.StarlingSignalCommand;
 
-	public class StartGameCommand extends StarlingCommand
+	public class StartGameCommand extends StarlingSignalCommand
 	{
 		public function StartGameCommand()
 		{

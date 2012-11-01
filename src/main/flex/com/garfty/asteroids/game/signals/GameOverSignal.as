@@ -4,7 +4,9 @@
  */
 package com.garfty.asteroids.game.signals
 {
-	public class GameOverSignal
+	import org.osflash.signals.Signal;
+
+	public class GameOverSignal extends Signal
 	{
 		public function GameOverSignal()
 		{
