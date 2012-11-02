@@ -4,8 +4,11 @@
  */
 package com.garfty.asteroids.application.commands
 {
-	import com.garfty.asteroids.application.models.vo.ApplicationStateMachineVO;
+	import com.fiber.core.utils.EntityManager;
+	import com.fiber.core.utils.IEntityManager;
 	import com.garfty.asteroids.logger.ILogger;
+	import com.garfty.asteroids.userinterface.views.WelcomeScreenMediator;
+	import com.garfty.asteroids.userinterface.views.WelcomeScreenView;
 
 	import org.robotlegs.mvcs.StarlingCommand;
 
@@ -23,6 +26,11 @@ package com.garfty.asteroids.application.commands
 		override public function execute():void
 		{
 			logger.info("Asteroids Application Start Up Complete");
+
+			injector.mapSingletonOf(EntityManager, IEntityManager);
+
+			mediatorMap.mapView( WelcomeScreenView, WelcomeScreenMediator );
+			contextView.addChild(new WelcomeScreenView());
 		}
 	}
 }
