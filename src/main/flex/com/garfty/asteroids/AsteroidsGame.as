@@ -16,6 +16,7 @@ package com.garfty.asteroids
   {
     private var _starlingContext:StarlingSignalContext;
 
+
     public function AsteroidsGame()
     {
       super();

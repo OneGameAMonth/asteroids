@@ -4,13 +4,16 @@
  */
 package com.garfty.asteroids.game.signals
 {
-	import org.osflash.signals.Signal;
 
-	public class GameOverSignal extends Signal
-	{
-		public function GameOverSignal()
-		{
-			super();
-		}
-	}
+  import com.garfty.asteroids.game.models.vo.PlayerInfoVO;
+
+  import org.osflash.signals.Signal;
+
+  public class GameOverSignal extends Signal
+  {
+    public function GameOverSignal()
+    {
+      super(PlayerInfoVO);
+    }
+  }
 }

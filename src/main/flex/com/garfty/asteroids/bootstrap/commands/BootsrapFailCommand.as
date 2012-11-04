@@ -18,6 +18,7 @@ package com.garfty.asteroids.bootstrap.commands
     [Inject]
     public var logger:ILogger;
 
+
     public function BootsrapFailCommand()
     {
       super();
