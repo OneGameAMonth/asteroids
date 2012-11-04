@@ -4,42 +4,43 @@
  */
 package com.garfty.asteroids.application.commands
 {
-	import com.garfty.asteroids.application.models.IEnvironmentModel;
-	import com.garfty.asteroids.bootstrap.utils.ApplicationBootstrapConstants;
-	import com.garfty.asteroids.logger.ILogger;
 
-	import org.robotlegs.mvcs.StarlingCommand;
-	import org.robotlegs.utilities.statemachine.StateEvent;
+  import com.garfty.asteroids.application.models.IEnvironmentModel;
+  import com.garfty.asteroids.bootstrap.utils.ApplicationBootstrapConstants;
+  import com.garfty.asteroids.logger.ILogger;
 
-	import starling.core.Starling;
+  import org.robotlegs.mvcs.StarlingCommand;
+  import org.robotlegs.utilities.statemachine.StateEvent;
 
-	public class InitialiseApplicationCommand extends StarlingCommand
-	{
-		[Inject]
-		public var logger:ILogger;
+  import starling.core.Starling;
 
-
-		[Inject]
-		public var environmentModel:IEnvironmentModel;
-		
-		
-		public function InitialiseApplicationCommand()
-		{
-			super();
-		}
+  public class InitialiseApplicationCommand extends StarlingCommand
+  {
+    [Inject]
+    public var logger:ILogger;
 
 
-		override public function execute():void
-		{
-			logger.info("Initialising Asteroids Application");
+    [Inject]
+    public var environmentModel:IEnvironmentModel;
 
-			environmentModel.flashVars = Starling.current.nativeStage.loaderInfo.parameters || {};
 
-			environmentModel.assetPath = environmentModel.getFlashVar("assetPath");
-			environmentModel.servicePath = environmentModel.getFlashVar("servicePath");
-			environmentModel.swfPath = environmentModel.getFlashVar("swfPath");
+    public function InitialiseApplicationCommand()
+    {
+      super();
+    }
 
-			eventDispatcher.dispatchEvent(new StateEvent(StateEvent.ACTION, ApplicationBootstrapConstants.APPLICATION_INITIALISATION_COMPLETE));
-		}
-	}
+
+    override public function execute():void
+    {
+      logger.info("Initialising Asteroids Application");
+
+      environmentModel.flashVars = Starling.current.nativeStage.loaderInfo.parameters || {};
+
+      environmentModel.assetPath = environmentModel.getFlashVar("assetPath");
+      environmentModel.servicePath = environmentModel.getFlashVar("servicePath");
+      environmentModel.swfPath = environmentModel.getFlashVar("swfPath");
+
+      eventDispatcher.dispatchEvent(new StateEvent(StateEvent.ACTION, ApplicationBootstrapConstants.APPLICATION_INITIALISATION_COMPLETE));
+    }
+  }
 }
