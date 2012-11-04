@@ -148,6 +148,10 @@ package com.garfty.asteroids.game.commands
 
       // Check to see if the user has completed the level
       if (gameModel.enemies.length == 0) {
+        _pickupTimer.stop();
+        _pickupTimer.removeEventListener(TimerEvent.TIMER, createRandomPickup);
+        _pickupTimer = null;
+
         levelCompleteSignal.dispatch();
       }
 
@@ -162,13 +166,23 @@ package com.garfty.asteroids.game.commands
 
       // Detect if the players game is over
       if (gameModel.lives <= 0) {
-        gameModel.gameOver = true;
-        gameOverSignal.dispatch(new PlayerInfoVO(gameModel.score, gameModel.lives, _ship.weapon.ammoCount, _ship.teleport.teleportCount));
+        gameOver();
       } else {
         createShip();
       }
 
       dispatchHudUpdate(entity);
+    }
+
+
+    private function gameOver():void
+    {
+      _pickupTimer.stop();
+      _pickupTimer.removeEventListener(TimerEvent.TIMER, createRandomPickup);
+      _pickupTimer = null;
+
+      gameModel.gameOver = true;
+      gameOverSignal.dispatch(new PlayerInfoVO(gameModel.score, gameModel.lives, _ship.weapon.ammoCount, _ship.teleport.teleportCount));
     }
 
 
@@ -195,8 +209,6 @@ package com.garfty.asteroids.game.commands
 
     private function createRandomPickup(event:TimerEvent):void
     {
-      trace("RANDOM PICK UP GENERATED!");
-
       // Set a new delay on the next timer event
       var delay:Number = Math.floor(Math.random() * (_pickupTimerDelayMax - _pickupTimerDelayMin + 1) + _pickupTimerDelayMin);
       _pickupTimer.delay = delay;

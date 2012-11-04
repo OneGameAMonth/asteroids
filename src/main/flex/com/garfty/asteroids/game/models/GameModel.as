@@ -50,7 +50,7 @@ package com.garfty.asteroids.game.models
       score = 0;
       lives = maxLives;
       level = 1;
-      difficulty = GameDifficultyConstants.INSANE;
+      difficulty = GameDifficultyConstants.EASY;
 
       super();
     }

@@ -15,7 +15,7 @@ package com.garfty.asteroids.game.entities.pickups
     [Embed(source="/../resources/images/ammo.png")]
     private static const AmmoTexture:Class;
 
-    private var _ammoCount:int = 5;
+    private var _ammoCount:int = 10;
 
     public function AmmoPickUp()
     {
