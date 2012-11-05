@@ -28,7 +28,7 @@ package com.garfty.asteroids.game.models
 
     private var _gameOver:Boolean;
 
-    private var _difficulty:String;
+    private var _difficulty:String = "";
 
     private var _asteroidCount:Vector.<int>;
 
@@ -50,7 +50,6 @@ package com.garfty.asteroids.game.models
       score = 0;
       lives = maxLives;
       level = 1;
-      difficulty = GameDifficultyConstants.EASY;
 
       super();
     }
