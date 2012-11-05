@@ -50,7 +50,7 @@ package com.garfty.asteroids.userinterface.views
     private function onRestartGameTriggered(event:Event):void
     {
       view.hide()
-      startGameSignal.dispatch();
+      startGameSignal.dispatch("");
     }
 
 
