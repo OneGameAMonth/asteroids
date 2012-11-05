@@ -41,10 +41,10 @@ package com.garfty.asteroids.game.entities
 		[Embed(source="/../../main/resources/images/ship.png")]
 		private static const ShipTexture:Class;
 
-		[Embed(source='/../../main/resources/audio/thruster.mp3')]
+		[Embed(source='/../../main/resources/audio/ship-thruster.mp3')]
 		private static const ThrusterSound:Class;
 
-		[Embed(source='/../../main/resources/audio/explosion.mp3')]
+		[Embed(source='/../../main/resources/audio/ship-explosion.mp3')]
 		private static const ExplosionSound:Class;
 
 		private var _gamepad:Gamepad;

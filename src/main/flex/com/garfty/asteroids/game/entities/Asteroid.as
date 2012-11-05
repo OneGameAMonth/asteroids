@@ -45,8 +45,6 @@ package com.garfty.asteroids.game.entities
 			physics.velocityX = (Math.random()*5) - 2;
 			physics.velocityY = (Math.random()*5) - 2;
 
-			trace(physics.velocityX + " || " + physics.velocityY);
-
 			health = new HealthComponent(this);
 			health.hits = 3;
 			health.entityDamageSignal.add(takeDamage);
@@ -69,8 +67,6 @@ package com.garfty.asteroids.game.entities
 					return;
 				}
 			}
-
-			trace((Math.floor(Math.random()*3) - 1)/10)
 		}
 
 

@@ -16,7 +16,7 @@ package com.garfty.asteroids.game.entities
 
 	public class Gun extends WeaponComponent
 	{
-		[Embed(source='/../../main/resources/audio/weapon-fire.mp3')]
+		[Embed(source='/../../main/resources/audio/ship-fire.mp3')]
 		private static const WeaponFireSound:Class;
 
 		public var _weaponFireSound:Sound;
