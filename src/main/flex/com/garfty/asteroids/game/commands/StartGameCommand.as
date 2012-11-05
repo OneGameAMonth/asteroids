@@ -123,7 +123,7 @@ package com.garfty.asteroids.game.commands
 			var radius:Number = int((entity.body.radius*.65)*10)/10;
 			var scale:Number = int((entity.view.scale*.65)*10)/10;
 
-			if (radius > 12) {
+			if (scale >= 0.3) {
 				for (var i:int = 0; i < 2; ++i) {
 					_asteroid = new Asteroid();
 					_asteroid.targets = gameModel.players;
@@ -139,15 +139,15 @@ package com.garfty.asteroids.game.commands
 			}
 
 			// Update the players score dependant on the size of the asteroid
-			if (entity.body.radius == 30) {
+			if (entity.view.scale == 1) {
 				gameModel.incrementScore(20);
 			}
 
-			if (entity.body.radius == 19.5) {
+			if (entity.view.scale == 0.6) {
 				gameModel.incrementScore(50);
 			}
 
-			if (entity.body.radius == 12.6) {
+			if (entity.view.scale == 0.3) {
 				gameModel.incrementScore(100);
 			}
 
