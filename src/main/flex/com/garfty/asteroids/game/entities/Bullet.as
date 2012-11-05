@@ -8,97 +8,97 @@
 package com.garfty.asteroids.game.entities
 {
 
-  import com.fiber.core.Entity;
-  import com.fiber.core.IEntity;
-  import com.fiber.core.components.BodyComponent;
-  import com.fiber.core.components.PhysicsComponent;
-  import com.fiber.core.components.ViewComponent;
+	import com.fiber.core.Entity;
+	import com.fiber.core.IEntity;
+	import com.fiber.core.components.BodyComponent;
+	import com.fiber.core.components.PhysicsComponent;
+	import com.fiber.core.components.ViewComponent;
 
-  import flash.display.Bitmap;
+	import flash.display.Bitmap;
 
-  import starling.display.Image;
-  import starling.display.Sprite;
-  import starling.textures.Texture;
+	import starling.display.Image;
+	import starling.display.Sprite;
+	import starling.textures.Texture;
 
-  public class Bullet extends Entity
-  {
-    [Embed(source="/../../main/resources/images/bullet.png")]
-    private static const BulletTexture:Class;
+	public class Bullet extends Entity
+	{
+		[Embed(source="/../../main/resources/images/bullet.png")]
+		private static const BulletTexture:Class;
 
-    private var _lifeSpan:int = 30;
+		private var _lifeSpan:int = 30;
 
-    private var _lifeTime:int = 0;
-
-
-    /**
-     * Constructor
-     */
-    public function Bullet()
-    {
-      var bmp:Bitmap = new BulletTexture();
-
-      var img:Image = new Image(Texture.fromBitmap(bmp));
-      img.x = img.y = -2.5;
-
-      body = new BodyComponent(this);
-      body.radius = 5;
-
-      physics = new PhysicsComponent(this);
-
-      view = new ViewComponent(this);
-      view.stageWrap = true;
-      view.container = new Sprite();
-      view.container.addChild(img);
-    }
+		private var _lifeTime:int = 0;
 
 
-    override public function update():void
-    {
-      super.update();
+		/**
+		 * Constructor
+		 */
+		public function Bullet()
+		{
+			var bmp:Bitmap = new BulletTexture();
 
-      // Check the collision of the bullet against other targets,
-      // if the bullet collides with another target then the target
-      // takes damage and the bullet should be destroyed.
-      for each(var target:IEntity in targets) {
-        if (body.handleCollisionDetection(target)) {
-          target.health.receiveDamage(1);
-          destroy();
-          return;
-        }
-      }
+			var img:Image = new Image(Texture.fromBitmap(bmp));
+			img.x = img.y = -2.5;
 
-      // Increment the life time value
-      lifeTime++;
+			body = new BodyComponent(this);
+			body.radius = 5;
 
-      // Check to see if the entity has exceeded its lifespan,
-      // if it has then destroy it.
-      if (lifeTime > lifeSpan) {
-        destroy();
-      }
-    }
+			physics = new PhysicsComponent(this);
+
+			view = new ViewComponent(this);
+			view.stageWrap = true;
+			view.container = new Sprite();
+			view.container.addChild(img);
+		}
 
 
-    public function get lifeSpan():int
-    {
-      return _lifeSpan;
-    }
+		override public function update():void
+		{
+			super.update();
+
+			// Check the collision of the bullet against other targets,
+			// if the bullet collides with another target then the target
+			// takes damage and the bullet should be destroyed.
+			for each(var target:IEntity in targets) {
+				if (body.handleCollisionDetection(target)) {
+					target.health.receiveDamage(1);
+					destroy();
+					return;
+				}
+			}
+
+			// Increment the life time value
+			lifeTime++;
+
+			// Check to see if the entity has exceeded its lifespan,
+			// if it has then destroy it.
+			if (lifeTime > lifeSpan) {
+				destroy();
+			}
+		}
 
 
-    public function set lifeSpan(value:int):void
-    {
-      _lifeSpan = value;
-    }
+		public function get lifeSpan():int
+		{
+			return _lifeSpan;
+		}
 
 
-    public function get lifeTime():int
-    {
-      return _lifeTime;
-    }
+		public function set lifeSpan(value:int):void
+		{
+			_lifeSpan = value;
+		}
 
 
-    public function set lifeTime(value:int):void
-    {
-      _lifeTime = value;
-    }
-  }
+		public function get lifeTime():int
+		{
+			return _lifeTime;
+		}
+
+
+		public function set lifeTime(value:int):void
+		{
+			_lifeTime = value;
+		}
+	}
 }

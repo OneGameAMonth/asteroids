@@ -8,13 +8,13 @@
 package com.garfty.asteroids.userinterface.signals
 {
 
-  import org.osflash.signals.Signal;
+	import org.osflash.signals.Signal;
 
-  public class DisplayGameCompleteSignal extends Signal
-  {
-    public function DisplayGameCompleteSignal()
-    {
-      super();
-    }
-  }
+	public class DisplayGameCompleteSignal extends Signal
+	{
+		public function DisplayGameCompleteSignal()
+		{
+			super();
+		}
+	}
 }

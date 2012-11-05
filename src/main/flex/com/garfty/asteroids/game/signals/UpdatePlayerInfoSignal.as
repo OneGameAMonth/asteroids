@@ -8,15 +8,15 @@
 package com.garfty.asteroids.game.signals
 {
 
-  import com.garfty.asteroids.game.models.vo.PlayerInfoVO;
+	import com.garfty.asteroids.game.models.vo.PlayerInfoVO;
 
-  import org.osflash.signals.Signal;
+	import org.osflash.signals.Signal;
 
-  public class UpdatePlayerInfoSignal extends Signal
-  {
-    public function UpdatePlayerInfoSignal(...params)
-    {
-      super(PlayerInfoVO);
-    }
-  }
+	public class UpdatePlayerInfoSignal extends Signal
+	{
+		public function UpdatePlayerInfoSignal(...params)
+		{
+			super(PlayerInfoVO);
+		}
+	}
 }

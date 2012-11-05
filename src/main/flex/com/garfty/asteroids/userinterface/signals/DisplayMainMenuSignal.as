@@ -8,13 +8,13 @@
 package com.garfty.asteroids.userinterface.signals
 {
 
-  import org.osflash.signals.Signal;
+	import org.osflash.signals.Signal;
 
-  public class DisplayMainMenuSignal extends Signal
-  {
-    public function DisplayMainMenuSignal()
-    {
-      super();
-    }
-  }
+	public class DisplayMainMenuSignal extends Signal
+	{
+		public function DisplayMainMenuSignal()
+		{
+			super();
+		}
+	}
 }

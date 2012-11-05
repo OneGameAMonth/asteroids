@@ -22,6 +22,7 @@ package com.garfty.asteroids.userinterface.views
 		[Inject]
 		public var logger:ILogger;
 
+
 		public function MediatorBase()
 		{
 			super();

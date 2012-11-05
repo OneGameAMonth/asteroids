@@ -8,33 +8,34 @@
 package com.garfty.asteroids.game.entities.pickups
 {
 
-  import com.fiber.core.IEntity;
+	import com.fiber.core.IEntity;
 
-  public class AmmoPickUp extends PickUpBase
-  {
-    [Embed(source="/../resources/images/ammo.png")]
-    private static const AmmoTexture:Class;
+	public class AmmoPickUp extends PickUpBase
+	{
+		[Embed(source="/../resources/images/ammo.png")]
+		private static const AmmoTexture:Class;
 
-    private var _ammoCount:int = 10;
-
-    public function AmmoPickUp()
-    {
-      _bmp = new AmmoTexture();
-      super();
-    }
+		private var _ammoCount:int = 10;
 
 
-    override public function update():void
-    {
-      super.update();
+		public function AmmoPickUp()
+		{
+			_bmp = new AmmoTexture();
+			super();
+		}
 
-      for each(var target:IEntity in targets) {
-        if (body.handleCollisionDetection(target) && target.weapon) {
-          target.weapon.receiveAmmo(_ammoCount);
-          destroy();
-          return;
-        }
-      }
-    }
-  }
+
+		override public function update():void
+		{
+			super.update();
+
+			for each(var target:IEntity in targets) {
+				if (body.handleCollisionDetection(target) && target.weapon) {
+					target.weapon.receiveAmmo(_ammoCount);
+					destroy();
+					return;
+				}
+			}
+		}
+	}
 }

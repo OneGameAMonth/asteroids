@@ -12,7 +12,6 @@ package com.garfty.asteroids.game.entities
 	import com.fiber.core.components.WeaponComponent;
 
 	import flash.media.Sound;
-
 	import flash.media.SoundChannel;
 
 	public class Gun extends WeaponComponent
@@ -22,6 +21,7 @@ package com.garfty.asteroids.game.entities
 
 		public var _weaponFireSound:Sound;
 		public var _weaponFireSoundChannel:SoundChannel;
+
 
 		public function Gun(entity:IEntity)
 		{

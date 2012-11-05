@@ -75,8 +75,8 @@ package com.garfty.asteroids.game.commands
 			gameLoopManager.startGameLoop();
 
 			// Set the difficulty.
-			if(gameModel.difficulty == "" || gameModel.difficulty != difficulty){
-				 gameModel.difficulty = difficulty;
+			if (gameModel.difficulty == "" || gameModel.difficulty != difficulty) {
+				gameModel.difficulty = difficulty;
 			}
 
 			// The game is not over, it's only just begun...

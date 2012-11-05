@@ -8,33 +8,34 @@
 package com.garfty.asteroids.game.entities.pickups
 {
 
-  import com.fiber.core.IEntity;
+	import com.fiber.core.IEntity;
 
-  public class TeleportPickUp extends PickUpBase
-  {
-    [Embed(source="/../resources/images/teleport.png")]
-    private static const TeleportTexture:Class;
+	public class TeleportPickUp extends PickUpBase
+	{
+		[Embed(source="/../resources/images/teleport.png")]
+		private static const TeleportTexture:Class;
 
-    private var _teleportCount:int = 1;
-
-    public function TeleportPickUp()
-    {
-      _bmp = new TeleportTexture();
-      super();
-    }
+		private var _teleportCount:int = 1;
 
 
-    override public function update():void
-    {
-      super.update();
+		public function TeleportPickUp()
+		{
+			_bmp = new TeleportTexture();
+			super();
+		}
 
-      for each(var target:IEntity in targets) {
-        if (body.handleCollisionDetection(target) && target.teleport) {
-          target.teleport.receiveTeleports(_teleportCount);
-          destroy();
-          return;
-        }
-      }
-    }
-  }
+
+		override public function update():void
+		{
+			super.update();
+
+			for each(var target:IEntity in targets) {
+				if (body.handleCollisionDetection(target) && target.teleport) {
+					target.teleport.receiveTeleports(_teleportCount);
+					destroy();
+					return;
+				}
+			}
+		}
+	}
 }

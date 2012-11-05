@@ -1,29 +1,29 @@
 /* 
-Copyright 2008 Cheezeworld.com 
+ Copyright 2008 Cheezeworld.com
 
-Additional key constants added by Iain Lobb.
+ Additional key constants added by Iain Lobb.
 
-Permission is hereby granted, free of charge, to any person
-obtaining a copy of this software and associated documentation
-files (the "Software"), to deal in the Software without
-restriction, including without limitation the rights to use,
-copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the
-Software is furnished to do so, subject to the following
-conditions:
+ Permission is hereby granted, free of charge, to any person
+ obtaining a copy of this software and associated documentation
+ files (the "Software"), to deal in the Software without
+ restriction, including without limitation the rights to use,
+ copy, modify, merge, publish, distribute, sublicense, and/or sell
+ copies of the Software, and to permit persons to whom the
+ Software is furnished to do so, subject to the following
+ conditions:
 
-The above copyright notice and this permission notice shall be
-included in all copies or substantial portions of the Software.
+ The above copyright notice and this permission notice shall be
+ included in all copies or substantial portions of the Software.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
-OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
-HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
-WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
-OTHER DEALINGS IN THE SOFTWARE.
-*/
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+ OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+ HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+ WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+ FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+ OTHER DEALINGS IN THE SOFTWARE.
+ */
 
 
 package com.garfty.asteroids.gamepad
@@ -57,7 +57,7 @@ package com.garfty.asteroids.gamepad
 		public static const X:int = 88;
 		public static const Y:int = 89;
 		public static const Z:int = 90;
-		
+
 		//NUMBERS
 		public static const ZERO:int = 48;
 		public static const ONE:int = 49;
@@ -69,7 +69,7 @@ package com.garfty.asteroids.gamepad
 		public static const SEVEN:int = 55;
 		public static const EIGHT:int = 56;
 		public static const NINE:int = 57;
-		
+
 		//NUMPAD
 		public static const NUMPAD_0:int = 96;
 		public static const NUMPAD_1:int = 97;
@@ -87,7 +87,7 @@ package com.garfty.asteroids.gamepad
 		public static const NUMPAD_SUBTRACT:int = 109;
 		public static const NUMPAD_DECIMAL:int = 110;
 		public static const NUMPAD_DIVIDE:int = 111;
-		
+
 		//FUNCTION KEYS
 		public static const F1:int = 112;
 		public static const F2:int = 113;
@@ -104,7 +104,7 @@ package com.garfty.asteroids.gamepad
 		public static const F13:int = 124;
 		public static const F14:int = 125;
 		public static const F15:int = 126;
-		
+
 		//SYMBOLS
 		public static const COLON:int = 186;
 		public static const EQUALS:int = 187;
@@ -117,7 +117,7 @@ package com.garfty.asteroids.gamepad
 		public static const QUOTES:int = 222;
 		public static const LESS_THAN:int = 188;
 		public static const GREATER_THAN:int = 190;
-		
+
 		//OTHER KEYS		
 		public static const BACKSPACE:int = 8;
 		public static const TAB:int = 9;
@@ -141,7 +141,7 @@ package com.garfty.asteroids.gamepad
 		public static const DELETE:int = 46;
 		public static const HELP:int = 47;
 		public static const NUM_LOCK:int = 144;
-	
+
 
 	}
 }

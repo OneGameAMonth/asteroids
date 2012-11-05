@@ -8,19 +8,19 @@
 package com.garfty.asteroids
 {
 
-  import org.robotlegs.mvcs.StarlingSignalContext;
+	import org.robotlegs.mvcs.StarlingSignalContext;
 
-  import starling.display.Sprite;
+	import starling.display.Sprite;
 
-  public class AsteroidsGame extends Sprite
-  {
-    private var _starlingContext:StarlingSignalContext;
+	public class AsteroidsGame extends Sprite
+	{
+		private var _starlingContext:StarlingSignalContext;
 
 
-    public function AsteroidsGame()
-    {
-      super();
-      _starlingContext = new AsteroidsContext(this);
-    }
-  }
+		public function AsteroidsGame()
+		{
+			super();
+			_starlingContext = new AsteroidsContext(this);
+		}
+	}
 }

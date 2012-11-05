@@ -8,34 +8,34 @@
 package com.garfty.asteroids.game.entities.pickups
 {
 
-  import com.fiber.core.IEntity;
+	import com.fiber.core.IEntity;
 
-  import flash.utils.Timer;
+	public class HealthPickUp extends PickUpBase
+	{
+		[Embed(source="/../resources/images/health.png")]
+		private static const HealthTexture:Class;
 
-  public class HealthPickUp extends PickUpBase
-  {
-    [Embed(source="/../resources/images/health.png")]
-    private static const HealthTexture:Class;
+		private var _health:int = 1;
 
-    private var _health:int = 1;
 
-    public function HealthPickUp()
-    {
-      _bmp = new HealthTexture();
-      super();
-    }
+		public function HealthPickUp()
+		{
+			_bmp = new HealthTexture();
+			super();
+		}
 
-    override public function update():void
-    {
-      super.update();
 
-      for each(var target:IEntity in targets) {
-        if (body.handleCollisionDetection(target) && target.health) {
-          target.health.receiveHealth(_health);
-          destroy();
-          return;
-        }
-      }
-    }
-  }
+		override public function update():void
+		{
+			super.update();
+
+			for each(var target:IEntity in targets) {
+				if (body.handleCollisionDetection(target) && target.health) {
+					target.health.receiveHealth(_health);
+					destroy();
+					return;
+				}
+			}
+		}
+	}
 }

@@ -8,22 +8,23 @@
 package com.garfty.asteroids.game.models.vo
 {
 
-  public class PlayerInfoVO
-  {
-    public var score:int = 0;
+	public class PlayerInfoVO
+	{
+		public var score:int = 0;
 
-    public var lives:int = 0;
+		public var lives:int = 0;
 
-    public var ammo:int = 0;
+		public var ammo:int = 0;
 
-    public var teleports:int = 0;
+		public var teleports:int = 0;
 
-    public function PlayerInfoVO(score:int, lives:int, ammo:int, teleports:int)
-    {
-      this.score = score;
-      this.lives = lives;
-      this.ammo = ammo;
-      this.teleports = teleports;
-    }
-  }
+
+		public function PlayerInfoVO(score:int, lives:int, ammo:int, teleports:int)
+		{
+			this.score = score;
+			this.lives = lives;
+			this.ammo = ammo;
+			this.teleports = teleports;
+		}
+	}
 }

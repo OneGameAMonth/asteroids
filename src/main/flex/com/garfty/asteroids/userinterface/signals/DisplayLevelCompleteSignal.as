@@ -8,13 +8,13 @@
 package com.garfty.asteroids.userinterface.signals
 {
 
-  import org.osflash.signals.Signal;
+	import org.osflash.signals.Signal;
 
-  public class DisplayLevelCompleteSignal extends Signal
-  {
-    public function DisplayLevelCompleteSignal()
-    {
-      super();
-    }
-  }
+	public class DisplayLevelCompleteSignal extends Signal
+	{
+		public function DisplayLevelCompleteSignal()
+		{
+			super();
+		}
+	}
 }

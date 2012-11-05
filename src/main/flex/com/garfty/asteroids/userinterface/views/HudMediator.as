@@ -8,62 +8,63 @@
 package com.garfty.asteroids.userinterface.views
 {
 
-  import com.garfty.asteroids.game.models.vo.PlayerInfoVO;
-  import com.garfty.asteroids.game.signals.UpdatePlayerInfoSignal;
-  import com.garfty.asteroids.userinterface.signals.DisplayGameHudSignal;
-  import com.garfty.asteroids.userinterface.signals.HideGameHudSignal;
+	import com.garfty.asteroids.game.models.vo.PlayerInfoVO;
+	import com.garfty.asteroids.game.signals.UpdatePlayerInfoSignal;
+	import com.garfty.asteroids.userinterface.signals.DisplayGameHudSignal;
+	import com.garfty.asteroids.userinterface.signals.HideGameHudSignal;
 
-  import org.robotlegs.mvcs.StarlingMediator;
+	import org.robotlegs.mvcs.StarlingMediator;
 
-  public class HudMediator extends StarlingMediator
-  {
-    [Inject]
-    public var view:HudView;
+	public class HudMediator extends StarlingMediator
+	{
+		[Inject]
+		public var view:HudView;
 
-    [Inject]
-    public var updatePlayerInfoSignal:UpdatePlayerInfoSignal;
+		[Inject]
+		public var updatePlayerInfoSignal:UpdatePlayerInfoSignal;
 
-    [Inject]
-    public var displayGameHudSignal:DisplayGameHudSignal;
+		[Inject]
+		public var displayGameHudSignal:DisplayGameHudSignal;
 
-    [Inject]
-    public var hideGameHudSignal:HideGameHudSignal;
-
-    public function HudMediator()
-    {
-      super();
-    }
+		[Inject]
+		public var hideGameHudSignal:HideGameHudSignal;
 
 
-    override public function onRegister():void
-    {
-      updatePlayerInfoSignal.add(handlePlayerInfoUpdate);
-
-      view.hide();
-
-      displayGameHudSignal.add(onDisplayGameHud);
-      hideGameHudSignal.add(onHideGameHud);
-    }
+		public function HudMediator()
+		{
+			super();
+		}
 
 
-    private function onDisplayGameHud():void
-    {
-      view.show();
-    }
+		override public function onRegister():void
+		{
+			updatePlayerInfoSignal.add(handlePlayerInfoUpdate);
+
+			view.hide();
+
+			displayGameHudSignal.add(onDisplayGameHud);
+			hideGameHudSignal.add(onHideGameHud);
+		}
 
 
-    private function onHideGameHud():void
-    {
-      view.hide();
-    }
+		private function onDisplayGameHud():void
+		{
+			view.show();
+		}
 
 
-    private function handlePlayerInfoUpdate(info:PlayerInfoVO):void
-    {
-      view.livesLabel.text = "Lives: " + info.lives;
-      view.scoreLabel.text = "Score: " + info.score;
-      view.ammoLabel.text = "Ammo: " + info.ammo;
-      view.teleportsLabel.text = "Teleports: " + info.teleports;
-    }
-  }
+		private function onHideGameHud():void
+		{
+			view.hide();
+		}
+
+
+		private function handlePlayerInfoUpdate(info:PlayerInfoVO):void
+		{
+			view.livesLabel.text = "Lives: " + info.lives;
+			view.scoreLabel.text = "Score: " + info.score;
+			view.ammoLabel.text = "Ammo: " + info.ammo;
+			view.teleportsLabel.text = "Teleports: " + info.teleports;
+		}
+	}
 }

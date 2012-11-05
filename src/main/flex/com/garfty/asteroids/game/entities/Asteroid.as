@@ -70,7 +70,7 @@ package com.garfty.asteroids.game.entities
 				}
 			}
 
-			trace( (Math.floor(Math.random()*3) - 1) / 10 )
+			trace((Math.floor(Math.random()*3) - 1)/10)
 		}
 
 

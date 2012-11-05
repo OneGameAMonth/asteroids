@@ -8,17 +8,17 @@
 package com.garfty.asteroids.game.models.constants
 {
 
-  public class GameDifficultyConstants
-  {
-    public static const EASY:String = 'difficultyEasy';
-    public static const MEDIUM:String = 'difficultyMedium';
-    public static const HARD:String = 'difficultyHard';
-    public static const INSANE:String = 'difficultyInsane';
+	public class GameDifficultyConstants
+	{
+		public static const EASY:String = 'difficultyEasy';
+		public static const MEDIUM:String = 'difficultyMedium';
+		public static const HARD:String = 'difficultyHard';
+		public static const INSANE:String = 'difficultyInsane';
 
 
-    public function GameDifficultyConstants()
-    {
-      super();
-    }
-  }
+		public function GameDifficultyConstants()
+		{
+			super();
+		}
+	}
 }

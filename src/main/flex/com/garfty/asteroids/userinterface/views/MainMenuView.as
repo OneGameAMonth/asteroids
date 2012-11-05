@@ -37,6 +37,7 @@ package com.garfty.asteroids.userinterface.views
 
 		private var _logoImg:Image;
 
+
 		/**
 		 * Constructor
 		 */
@@ -51,14 +52,14 @@ package com.garfty.asteroids.userinterface.views
 
 			welcomeContainer = new Sprite();
 
-			playButton = new Button(Texture.empty(270, 50, 0xFFFFFF),"PLAY");
+			playButton = new Button(Texture.empty(270, 50, 0xFFFFFF), "PLAY");
 			playButton.fontName = "Edit Undo Line";
 			playButton.fontSize = 40;
 			playButton.fontColor = 0x05BA8B;
 			playButton.useHandCursor = true;
 			welcomeContainer.addChild(playButton);
 
-			instructionsButton = new Button(Texture.empty(270, 50, 0xFFFFFF),"INSTRUCTIONS");
+			instructionsButton = new Button(Texture.empty(270, 50, 0xFFFFFF), "INSTRUCTIONS");
 			instructionsButton.fontName = "Edit Undo Line";
 			instructionsButton.fontSize = 40;
 			instructionsButton.y = 70;
@@ -71,14 +72,14 @@ package com.garfty.asteroids.userinterface.views
 			difficultyContainer = new Sprite();
 			addChild(difficultyContainer);
 
-			easyButton = new Button(Texture.empty(140, 50, 0xFFFFFF),"EASY");
+			easyButton = new Button(Texture.empty(140, 50, 0xFFFFFF), "EASY");
 			easyButton.fontName = "Edit Undo Line";
 			easyButton.fontSize = 40;
 			easyButton.fontColor = 0x05BA8B;
 			easyButton.useHandCursor = true;
 			difficultyContainer.addChild(easyButton);
 
-			mediumButton = new Button(Texture.empty(140, 50, 0xFFFFFF),"MEDIUM");
+			mediumButton = new Button(Texture.empty(140, 50, 0xFFFFFF), "MEDIUM");
 			mediumButton.fontName = "Edit Undo Line";
 			mediumButton.fontSize = 40;
 			mediumButton.y = 60;
@@ -86,7 +87,7 @@ package com.garfty.asteroids.userinterface.views
 			mediumButton.useHandCursor = true;
 			difficultyContainer.addChild(mediumButton);
 
-			hardButton = new Button(Texture.empty(140, 50, 0xFFFFFF),"HARD");
+			hardButton = new Button(Texture.empty(140, 50, 0xFFFFFF), "HARD");
 			hardButton.fontName = "Edit Undo Line";
 			hardButton.fontSize = 40;
 			hardButton.y = 120;
@@ -94,7 +95,7 @@ package com.garfty.asteroids.userinterface.views
 			hardButton.useHandCursor = true;
 			difficultyContainer.addChild(hardButton);
 
-			insaneButton = new Button(Texture.empty(140, 50, 0xFFFFFF),"INSANE");
+			insaneButton = new Button(Texture.empty(140, 50, 0xFFFFFF), "INSANE");
 			insaneButton.fontName = "Edit Undo Line";
 			insaneButton.fontSize = 40;
 			insaneButton.y = 180;
@@ -105,7 +106,7 @@ package com.garfty.asteroids.userinterface.views
 			instructionsContainer = new Sprite();
 			addChild(instructionsContainer);
 
-			_instructionsText = new TextField(500, 250, "Welcome to Asteroids, the game where you have to defeat all of the asteroids before they smash in to you. This path is a long and daunting one for someone to take on, beware of your ammo and warps as they are not unlimited. Use the arrow keys to move around, space to shoot and shift to warp. Good luck cadette.", "Edit Undo Line", 22, 0x05BA8B )
+			_instructionsText = new TextField(500, 250, "Welcome to Asteroids, the game where you have to defeat all of the asteroids before they smash in to you. This path is a long and daunting one for someone to take on, beware of your ammo and warps as they are not unlimited. Use the arrow keys to move around, space to shoot and shift to warp. Good luck cadette.", "Edit Undo Line", 22, 0x05BA8B)
 			instructionsContainer.addChild(_instructionsText);
 
 

@@ -13,11 +13,12 @@ package com.garfty.asteroids.game.utils
 
 		private var _instance:Font;
 
+
 		public function EditUndoFont()
 		{
 			super();
 
-			Font.registerFont( FontClass );
+			Font.registerFont(FontClass);
 			_instance = new FontClass();
 		}
 	}

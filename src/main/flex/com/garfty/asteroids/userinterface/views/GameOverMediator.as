@@ -8,62 +8,63 @@
 package com.garfty.asteroids.userinterface.views
 {
 
-  import com.garfty.asteroids.game.signals.StartGameSignal;
-  import com.garfty.asteroids.userinterface.signals.DisplayGameOverSignal;
-  import com.garfty.asteroids.userinterface.signals.DisplayMainMenuSignal;
+	import com.garfty.asteroids.game.signals.StartGameSignal;
+	import com.garfty.asteroids.userinterface.signals.DisplayGameOverSignal;
+	import com.garfty.asteroids.userinterface.signals.DisplayMainMenuSignal;
 
-  import org.robotlegs.mvcs.StarlingMediator;
+	import org.robotlegs.mvcs.StarlingMediator;
 
-  import starling.events.Event;
+	import starling.events.Event;
 
-  public class GameOverMediator extends StarlingMediator
-  {
-    [Inject]
-    public var view:GameOverView;
+	public class GameOverMediator extends StarlingMediator
+	{
+		[Inject]
+		public var view:GameOverView;
 
-    [Inject]
-    public var displayGameOverSignal:DisplayGameOverSignal;
+		[Inject]
+		public var displayGameOverSignal:DisplayGameOverSignal;
 
-    [Inject]
-    public var displayMainMenuSignal:DisplayMainMenuSignal;
+		[Inject]
+		public var displayMainMenuSignal:DisplayMainMenuSignal;
 
-    [Inject]
-    public var startGameSignal:StartGameSignal;
-
-    public function GameOverMediator()
-    {
-      super();
-    }
+		[Inject]
+		public var startGameSignal:StartGameSignal;
 
 
-    override public function onRegister():void
-    {
-      view.hide();
-
-      view.restartGameButton.addEventListener(Event.TRIGGERED, onRestartGameTriggered);
-      view.mainMenuButton.addEventListener(Event.TRIGGERED, onMainMenuTriggered);
-
-      displayGameOverSignal.add(handleGameOver);
-    }
+		public function GameOverMediator()
+		{
+			super();
+		}
 
 
-    private function onRestartGameTriggered(event:Event):void
-    {
-      view.hide()
-      startGameSignal.dispatch("");
-    }
+		override public function onRegister():void
+		{
+			view.hide();
+
+			view.restartGameButton.addEventListener(Event.TRIGGERED, onRestartGameTriggered);
+			view.mainMenuButton.addEventListener(Event.TRIGGERED, onMainMenuTriggered);
+
+			displayGameOverSignal.add(handleGameOver);
+		}
 
 
-    private function onMainMenuTriggered(event:Event):void
-    {
-      view.hide();
-      displayMainMenuSignal.dispatch();
-    }
+		private function onRestartGameTriggered(event:Event):void
+		{
+			view.hide()
+			startGameSignal.dispatch("");
+		}
 
 
-    private function handleGameOver():void
-    {
-      view.show();
-    }
-  }
+		private function onMainMenuTriggered(event:Event):void
+		{
+			view.hide();
+			displayMainMenuSignal.dispatch();
+		}
+
+
+		private function handleGameOver():void
+		{
+			view.show();
+		}
+	}
 }

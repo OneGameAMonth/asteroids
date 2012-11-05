@@ -60,8 +60,9 @@ package com.garfty.asteroids.game.entities
 
 		public var _explosionSound:Sound;
 		public var _explosionSoundChannel:SoundChannel;
-		
+
 		public var _audioLoopTimer:Timer;
+
 
 		/**
 		 * Constructor

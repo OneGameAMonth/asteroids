@@ -8,26 +8,26 @@
 package com.garfty.asteroids.bootstrap.commands
 {
 
-  import com.garfty.asteroids.logger.ILogger;
+	import com.garfty.asteroids.logger.ILogger;
 
-  import org.robotlegs.mvcs.SignalCommand;
+	import org.robotlegs.mvcs.SignalCommand;
 
-  public class BootsrapFailCommand extends SignalCommand
-  {
+	public class BootsrapFailCommand extends SignalCommand
+	{
 
-    [Inject]
-    public var logger:ILogger;
-
-
-    public function BootsrapFailCommand()
-    {
-      super();
-    }
+		[Inject]
+		public var logger:ILogger;
 
 
-    override public function execute():void
-    {
-      logger.fatal("Asteroids Bootstrap Failed.");
-    }
-  }
+		public function BootsrapFailCommand()
+		{
+			super();
+		}
+
+
+		override public function execute():void
+		{
+			logger.fatal("Asteroids Bootstrap Failed.");
+		}
+	}
 }

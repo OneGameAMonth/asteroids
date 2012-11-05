@@ -91,18 +91,18 @@ package com.garfty.asteroids.userinterface.views
 			_buttonClickSoundChannel = _buttonClickSound.play();
 			view.hide();
 
-			switch (event.target){
+			switch (event.target) {
 				case view.easyButton:
-						startGameSignal.dispatch(GameDifficultyConstants.EASY);
+					startGameSignal.dispatch(GameDifficultyConstants.EASY);
 					break;
 				case view.mediumButton:
-						startGameSignal.dispatch(GameDifficultyConstants.MEDIUM);
+					startGameSignal.dispatch(GameDifficultyConstants.MEDIUM);
 					break;
 				case view.hardButton:
-						startGameSignal.dispatch(GameDifficultyConstants.HARD);
+					startGameSignal.dispatch(GameDifficultyConstants.HARD);
 					break;
 				case view.insaneButton:
-						startGameSignal.dispatch(GameDifficultyConstants.INSANE);
+					startGameSignal.dispatch(GameDifficultyConstants.INSANE);
 					break;
 			}
 

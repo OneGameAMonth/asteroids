@@ -7,7 +7,6 @@ package com.garfty.asteroids.userinterface.views
 	import flash.display.Bitmap;
 
 	import starling.display.Image;
-
 	import starling.display.Sprite;
 	import starling.events.Event;
 	import starling.textures.Texture;
@@ -19,6 +18,7 @@ package com.garfty.asteroids.userinterface.views
 
 		private var _bmp:Bitmap;
 		private var _image:Image;
+
 
 		public function BackgroundView()
 		{

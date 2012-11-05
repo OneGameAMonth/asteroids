@@ -5,69 +5,69 @@
 package com.garfty.asteroids.bootstrap.commands.robotlegs
 {
 
-  import com.fiber.core.signals.EntityCreatedSignal;
-  import com.fiber.core.signals.EntityDestroyedSignal;
-  import com.fiber.core.signals.RenderSignal;
-  import com.fiber.core.signals.UpdateSignal;
-  import com.garfty.asteroids.bootstrap.utils.ApplicationBootstrapConstants;
-  import com.garfty.asteroids.game.signals.UpdatePlayerInfoSignal;
-  import com.garfty.asteroids.logger.ILogger;
-  import com.garfty.asteroids.userinterface.signals.DisplayGameCompleteSignal;
-  import com.garfty.asteroids.userinterface.signals.DisplayGameHudSignal;
-  import com.garfty.asteroids.userinterface.signals.DisplayGameOverSignal;
-  import com.garfty.asteroids.userinterface.signals.DisplayLevelCompleteSignal;
-  import com.garfty.asteroids.userinterface.signals.DisplayMainMenuSignal;
-  import com.garfty.asteroids.userinterface.signals.HideGameCompleteSignal;
-  import com.garfty.asteroids.userinterface.signals.HideGameHudSignal;
-  import com.garfty.asteroids.userinterface.signals.HideGameOverSignal;
-  import com.garfty.asteroids.userinterface.signals.HideLevelCompleteSignal;
-  import com.garfty.asteroids.userinterface.signals.HideMainMenuSignal;
+	import com.fiber.core.signals.EntityCreatedSignal;
+	import com.fiber.core.signals.EntityDestroyedSignal;
+	import com.fiber.core.signals.RenderSignal;
+	import com.fiber.core.signals.UpdateSignal;
+	import com.garfty.asteroids.bootstrap.utils.ApplicationBootstrapConstants;
+	import com.garfty.asteroids.game.signals.UpdatePlayerInfoSignal;
+	import com.garfty.asteroids.logger.ILogger;
+	import com.garfty.asteroids.userinterface.signals.DisplayGameCompleteSignal;
+	import com.garfty.asteroids.userinterface.signals.DisplayGameHudSignal;
+	import com.garfty.asteroids.userinterface.signals.DisplayGameOverSignal;
+	import com.garfty.asteroids.userinterface.signals.DisplayLevelCompleteSignal;
+	import com.garfty.asteroids.userinterface.signals.DisplayMainMenuSignal;
+	import com.garfty.asteroids.userinterface.signals.HideGameCompleteSignal;
+	import com.garfty.asteroids.userinterface.signals.HideGameHudSignal;
+	import com.garfty.asteroids.userinterface.signals.HideGameOverSignal;
+	import com.garfty.asteroids.userinterface.signals.HideLevelCompleteSignal;
+	import com.garfty.asteroids.userinterface.signals.HideMainMenuSignal;
 
-  import org.robotlegs.mvcs.StarlingSignalCommand;
-  import org.robotlegs.utilities.statemachine.StateEvent;
+	import org.robotlegs.mvcs.StarlingSignalCommand;
+	import org.robotlegs.utilities.statemachine.StateEvent;
 
-  public class RegisterApplicationSignals extends StarlingSignalCommand
-  {
-    [Inject]
-    public var logger:ILogger;
-
-
-    public function RegisterApplicationSignals()
-    {
-      super();
-    }
+	public class RegisterApplicationSignals extends StarlingSignalCommand
+	{
+		[Inject]
+		public var logger:ILogger;
 
 
-    override public function execute():void
-    {
-      logger.info("Registering Application Signals");
+		public function RegisterApplicationSignals()
+		{
+			super();
+		}
 
-      // Signals from the fiber engine.
-      injector.mapSingleton(RenderSignal);
-      injector.mapSingleton(UpdateSignal);
-      injector.mapSingleton(EntityCreatedSignal);
-      injector.mapSingleton(EntityDestroyedSignal);
 
-      // Game signals
-      injector.mapSingleton(UpdatePlayerInfoSignal);
+		override public function execute():void
+		{
+			logger.info("Registering Application Signals");
 
-      // UI Signals
-      injector.mapSingleton(DisplayGameOverSignal);
-      injector.mapSingleton(HideGameOverSignal);
+			// Signals from the fiber engine.
+			injector.mapSingleton(RenderSignal);
+			injector.mapSingleton(UpdateSignal);
+			injector.mapSingleton(EntityCreatedSignal);
+			injector.mapSingleton(EntityDestroyedSignal);
 
-      injector.mapSingleton(DisplayGameHudSignal);
-      injector.mapSingleton(HideGameHudSignal);
+			// Game signals
+			injector.mapSingleton(UpdatePlayerInfoSignal);
 
-      injector.mapSingleton(DisplayMainMenuSignal);
-      injector.mapSingleton(HideMainMenuSignal);
+			// UI Signals
+			injector.mapSingleton(DisplayGameOverSignal);
+			injector.mapSingleton(HideGameOverSignal);
 
-      injector.mapSingleton(DisplayLevelCompleteSignal);
-      injector.mapSingleton(HideLevelCompleteSignal);
+			injector.mapSingleton(DisplayGameHudSignal);
+			injector.mapSingleton(HideGameHudSignal);
 
-      injector.mapSingleton(DisplayGameCompleteSignal);
-      injector.mapSingleton(HideGameCompleteSignal);
+			injector.mapSingleton(DisplayMainMenuSignal);
+			injector.mapSingleton(HideMainMenuSignal);
 
-      eventDispatcher.dispatchEvent(new StateEvent(StateEvent.ACTION, ApplicationBootstrapConstants.REGISTER_APPLICATION_SIGNALS_COMPLETE));
-    }
-  }
+			injector.mapSingleton(DisplayLevelCompleteSignal);
+			injector.mapSingleton(HideLevelCompleteSignal);
+
+			injector.mapSingleton(DisplayGameCompleteSignal);
+			injector.mapSingleton(HideGameCompleteSignal);
+
+			eventDispatcher.dispatchEvent(new StateEvent(StateEvent.ACTION, ApplicationBootstrapConstants.REGISTER_APPLICATION_SIGNALS_COMPLETE));
+		}
+	}
 }

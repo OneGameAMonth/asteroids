@@ -8,20 +8,20 @@
 package com.garfty.asteroids.userinterface.views
 {
 
-  import starling.display.Sprite;
-  import starling.events.Event;
+	import starling.display.Sprite;
+	import starling.events.Event;
 
-  public class GameCompleteView extends Sprite
-  {
-    public function GameCompleteView()
-    {
-      this.addEventListener(Event.ADDED_TO_STAGE, init);
-    }
+	public class GameCompleteView extends Sprite
+	{
+		public function GameCompleteView()
+		{
+			this.addEventListener(Event.ADDED_TO_STAGE, init);
+		}
 
 
-    private function init(event:Event):void
-    {
-      this.removeEventListener(Event.ADDED_TO_STAGE, init);
-    }
-  }
+		private function init(event:Event):void
+		{
+			this.removeEventListener(Event.ADDED_TO_STAGE, init);
+		}
+	}
 }

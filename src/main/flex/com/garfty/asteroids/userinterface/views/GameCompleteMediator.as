@@ -8,18 +8,18 @@
 package com.garfty.asteroids.userinterface.views
 {
 
-  import org.robotlegs.mvcs.StarlingMediator;
+	import org.robotlegs.mvcs.StarlingMediator;
 
-  public class GameCompleteMediator extends StarlingMediator
-  {
-    public function GameCompleteMediator()
-    {
-      super();
-    }
+	public class GameCompleteMediator extends StarlingMediator
+	{
+		public function GameCompleteMediator()
+		{
+			super();
+		}
 
 
-    override public function onRegister():void
-    {
-    }
-  }
+		override public function onRegister():void
+		{
+		}
+	}
 }

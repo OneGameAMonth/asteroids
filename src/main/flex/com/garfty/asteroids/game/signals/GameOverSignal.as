@@ -5,15 +5,15 @@
 package com.garfty.asteroids.game.signals
 {
 
-  import com.garfty.asteroids.game.models.vo.PlayerInfoVO;
+	import com.garfty.asteroids.game.models.vo.PlayerInfoVO;
 
-  import org.osflash.signals.Signal;
+	import org.osflash.signals.Signal;
 
-  public class GameOverSignal extends Signal
-  {
-    public function GameOverSignal()
-    {
-      super(PlayerInfoVO);
-    }
-  }
+	public class GameOverSignal extends Signal
+	{
+		public function GameOverSignal()
+		{
+			super(PlayerInfoVO);
+		}
+	}
 }

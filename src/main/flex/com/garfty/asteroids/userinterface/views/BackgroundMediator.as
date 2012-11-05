@@ -9,6 +9,7 @@ package com.garfty.asteroids.userinterface.views
 		[Inject]
 		public var view:BackgroundView;
 
+
 		public function BackgroundMediator()
 		{
 			super();

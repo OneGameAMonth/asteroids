@@ -5,42 +5,42 @@
 package com.garfty.asteroids.application.commands
 {
 
-  import com.garfty.asteroids.application.models.IEnvironmentModel;
-  import com.garfty.asteroids.bootstrap.utils.ApplicationBootstrapConstants;
-  import com.garfty.asteroids.logger.ILogger;
+	import com.garfty.asteroids.application.models.IEnvironmentModel;
+	import com.garfty.asteroids.bootstrap.utils.ApplicationBootstrapConstants;
+	import com.garfty.asteroids.logger.ILogger;
 
-  import org.robotlegs.mvcs.StarlingCommand;
-  import org.robotlegs.utilities.statemachine.StateEvent;
+	import org.robotlegs.mvcs.StarlingCommand;
+	import org.robotlegs.utilities.statemachine.StateEvent;
 
-  import starling.core.Starling;
+	import starling.core.Starling;
 
-  public class InitialiseApplicationCommand extends StarlingCommand
-  {
-    [Inject]
-    public var logger:ILogger;
-
-
-    [Inject]
-    public var environmentModel:IEnvironmentModel;
+	public class InitialiseApplicationCommand extends StarlingCommand
+	{
+		[Inject]
+		public var logger:ILogger;
 
 
-    public function InitialiseApplicationCommand()
-    {
-      super();
-    }
+		[Inject]
+		public var environmentModel:IEnvironmentModel;
 
 
-    override public function execute():void
-    {
-      logger.info("Initialising Asteroids Application");
+		public function InitialiseApplicationCommand()
+		{
+			super();
+		}
 
-      environmentModel.flashVars = Starling.current.nativeStage.loaderInfo.parameters || {};
 
-      environmentModel.assetPath = environmentModel.getFlashVar("assetPath");
-      environmentModel.servicePath = environmentModel.getFlashVar("servicePath");
-      environmentModel.swfPath = environmentModel.getFlashVar("swfPath");
+		override public function execute():void
+		{
+			logger.info("Initialising Asteroids Application");
 
-      eventDispatcher.dispatchEvent(new StateEvent(StateEvent.ACTION, ApplicationBootstrapConstants.APPLICATION_INITIALISATION_COMPLETE));
-    }
-  }
+			environmentModel.flashVars = Starling.current.nativeStage.loaderInfo.parameters || {};
+
+			environmentModel.assetPath = environmentModel.getFlashVar("assetPath");
+			environmentModel.servicePath = environmentModel.getFlashVar("servicePath");
+			environmentModel.swfPath = environmentModel.getFlashVar("swfPath");
+
+			eventDispatcher.dispatchEvent(new StateEvent(StateEvent.ACTION, ApplicationBootstrapConstants.APPLICATION_INITIALISATION_COMPLETE));
+		}
+	}
 }

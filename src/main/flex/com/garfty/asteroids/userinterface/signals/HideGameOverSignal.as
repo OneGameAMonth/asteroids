@@ -8,10 +8,10 @@
 package com.garfty.asteroids.userinterface.signals
 {
 
-  public class HideGameOverSignal
-  {
-    public function HideGameOverSignal()
-    {
-    }
-  }
+	public class HideGameOverSignal
+	{
+		public function HideGameOverSignal()
+		{
+		}
+	}
 }

@@ -5,13 +5,13 @@
 package com.garfty.asteroids.game.signals
 {
 
-  import org.osflash.signals.Signal;
+	import org.osflash.signals.Signal;
 
-  public class StartGameSignal extends Signal
-  {
-    public function StartGameSignal()
-    {
-      super(String);
-    }
-  }
+	public class StartGameSignal extends Signal
+	{
+		public function StartGameSignal()
+		{
+			super(String);
+		}
+	}
 }
