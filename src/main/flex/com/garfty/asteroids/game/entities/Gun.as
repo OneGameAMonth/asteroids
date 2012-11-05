@@ -8,34 +8,49 @@
 package com.garfty.asteroids.game.entities
 {
 
-  import com.fiber.core.IEntity;
-  import com.fiber.core.components.WeaponComponent;
+	import com.fiber.core.IEntity;
+	import com.fiber.core.components.WeaponComponent;
 
-  public class Gun extends WeaponComponent
-  {
-    public function Gun(entity:IEntity)
-    {
-      super(entity);
-    }
+	import flash.media.Sound;
+
+	import flash.media.SoundChannel;
+
+	public class Gun extends WeaponComponent
+	{
+		[Embed(source='/../../main/resources/audio/weapon-fire.mp3')]
+		private static const WeaponFireSound:Class;
+
+		public var _weaponFireSound:Sound;
+		public var _weaponFireSoundChannel:SoundChannel;
+
+		public function Gun(entity:IEntity)
+		{
+			_weaponFireSoundChannel = new SoundChannel();
+			_weaponFireSound = new WeaponFireSound();
+
+			super(entity);
+		}
 
 
-    override public function fire():void
-    {
-      if(ammoCount <= 0){
-        return;
-      }
+		override public function fire():void
+		{
+			if (ammoCount <= 0) {
+				return;
+			}
 
-      var bullet:Bullet = new Bullet();
-      bullet.targets = entity.targets;
-      bullet.body.x = entity.body.x;
-      bullet.body.y = entity.body.y;
-      bullet.body.angle = entity.body.angle;
-      bullet.physics.accelerateForward(10);
+			var bullet:Bullet = new Bullet();
+			bullet.targets = entity.targets;
+			bullet.body.x = entity.body.x;
+			bullet.body.y = entity.body.y;
+			bullet.body.angle = entity.body.angle;
+			bullet.physics.accelerateForward(8);
 
-      entity.createdSignal.dispatch(bullet);
+			entity.createdSignal.dispatch(bullet);
 
-      ammoCount--;
-      weaponFiredSignal.dispatch(entity);
-    }
-  }
+			_weaponFireSoundChannel = _weaponFireSound.play();
+
+			ammoCount--;
+			weaponFiredSignal.dispatch(entity);
+		}
+	}
 }
