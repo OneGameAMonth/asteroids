@@ -12,14 +12,18 @@ package com.garfty.asteroids.bootstrap.commands.robotlegs
 	import com.garfty.asteroids.bootstrap.utils.ApplicationBootstrapConstants;
 	import com.garfty.asteroids.game.signals.UpdatePlayerInfoSignal;
 	import com.garfty.asteroids.logger.ILogger;
+	import com.garfty.asteroids.userinterface.signals.DisplayDifficultySelectionSignal;
 	import com.garfty.asteroids.userinterface.signals.DisplayGameCompleteSignal;
 	import com.garfty.asteroids.userinterface.signals.DisplayGameHudSignal;
 	import com.garfty.asteroids.userinterface.signals.DisplayGameOverSignal;
+	import com.garfty.asteroids.userinterface.signals.DisplayInstructionsSignal;
 	import com.garfty.asteroids.userinterface.signals.DisplayLevelCompleteSignal;
 	import com.garfty.asteroids.userinterface.signals.DisplayMainMenuSignal;
+	import com.garfty.asteroids.userinterface.signals.HideDifficultySelectionSignal;
 	import com.garfty.asteroids.userinterface.signals.HideGameCompleteSignal;
 	import com.garfty.asteroids.userinterface.signals.HideGameHudSignal;
 	import com.garfty.asteroids.userinterface.signals.HideGameOverSignal;
+	import com.garfty.asteroids.userinterface.signals.HideInstructionsSignal;
 	import com.garfty.asteroids.userinterface.signals.HideLevelCompleteSignal;
 	import com.garfty.asteroids.userinterface.signals.HideMainMenuSignal;
 
@@ -66,6 +70,12 @@ package com.garfty.asteroids.bootstrap.commands.robotlegs
 
 			injector.mapSingleton(DisplayGameCompleteSignal);
 			injector.mapSingleton(HideGameCompleteSignal);
+
+			injector.mapSingleton(DisplayDifficultySelectionSignal);
+			injector.mapSingleton(HideDifficultySelectionSignal);
+
+			injector.mapSingleton(DisplayInstructionsSignal);
+			injector.mapSingleton(HideInstructionsSignal);
 
 			eventDispatcher.dispatchEvent(new StateEvent(StateEvent.ACTION, ApplicationBootstrapConstants.REGISTER_APPLICATION_SIGNALS_COMPLETE));
 		}

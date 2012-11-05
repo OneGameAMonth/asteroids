@@ -15,6 +15,8 @@ package com.garfty.asteroids.bootstrap.commands.robotlegs
 	import com.garfty.asteroids.game.signals.LevelCompleteSignal;
 	import com.garfty.asteroids.game.signals.StartGameSignal;
 	import com.garfty.asteroids.logger.ILogger;
+	import com.garfty.asteroids.sound.commands.PlayBackgroundMusicCommand;
+	import com.garfty.asteroids.sound.signals.PlayBackgroundMusicSignal;
 
 	import org.robotlegs.mvcs.StarlingSignalCommand;
 	import org.robotlegs.utilities.statemachine.StateEvent;
@@ -40,6 +42,8 @@ package com.garfty.asteroids.bootstrap.commands.robotlegs
 			signalCommandMap.mapSignalClass(GameOverSignal, HandleGameOverCommand);
 			signalCommandMap.mapSignalClass(GameCompleteSignal, HandleGameCompleteCommand);
 			signalCommandMap.mapSignalClass(LevelCompleteSignal, HandleLevelCompleteCommand);
+
+			signalCommandMap.mapSignalClass(PlayBackgroundMusicSignal, PlayBackgroundMusicCommand);
 
 			eventDispatcher.dispatchEvent(new StateEvent(StateEvent.ACTION, ApplicationBootstrapConstants.REGISTER_APPLICATION_COMMANDS_COMPLETE));
 		}

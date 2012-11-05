@@ -11,6 +11,7 @@ package com.garfty.asteroids.game.commands
 	import com.garfty.asteroids.logger.ILogger;
 	import com.garfty.asteroids.userinterface.signals.DisplayGameCompleteSignal;
 	import com.garfty.asteroids.userinterface.signals.DisplayLevelCompleteSignal;
+	import com.garfty.asteroids.userinterface.signals.HideGameHudSignal;
 
 	import flash.utils.setTimeout;
 
@@ -29,6 +30,9 @@ package com.garfty.asteroids.game.commands
 
 		[Inject]
 		public var displayGameCompleteSignal:DisplayGameCompleteSignal;
+
+		[Inject]
+		public var hideGameHudSignal:HideGameHudSignal;
 
 		[Inject]
 		public var entityManager:IEntityManager;
@@ -64,6 +68,7 @@ package com.garfty.asteroids.game.commands
 			// Detect if there is another level, or if the user has completed the game.
 			if (gameModel.level - 1 < gameModel.asteroidCount.length) {
 				displayLevelCompleteSignal.dispatch();
+				hideGameHudSignal.dispatch();
 			}
 			else {
 				displayGameCompleteSignal.dispatch();
