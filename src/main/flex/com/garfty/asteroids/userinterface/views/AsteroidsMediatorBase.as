@@ -11,7 +11,7 @@ package com.garfty.asteroids.userinterface.views
 
 	import org.robotlegs.mvcs.StarlingMediator;
 
-	public class MediatorBase extends StarlingMediator
+	public class AsteroidsMediatorBase extends StarlingMediator
 	{
 		[Embed(source='/../../main/resources/audio/button-click.mp3')]
 		private static const ButtonClickSound:Class;
@@ -23,7 +23,7 @@ package com.garfty.asteroids.userinterface.views
 		public var logger:ILogger;
 
 
-		public function MediatorBase()
+		public function AsteroidsMediatorBase()
 		{
 			super();
 		}

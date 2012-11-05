@@ -54,7 +54,7 @@ package com.garfty.asteroids.userinterface.views
 		private function handleContinueButtonTriggered(event:Event):void
 		{
 			onHideLevelComplete();
-			startGameSignal.dispatch();
+			startGameSignal.dispatch("");
 		}
 
 

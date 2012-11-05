@@ -22,6 +22,7 @@ package com.garfty.asteroids.userinterface.views
 
 		public function HudView()
 		{
+			this.visible = false;
 			this.addEventListener(Event.ADDED_TO_STAGE, init);
 		}
 

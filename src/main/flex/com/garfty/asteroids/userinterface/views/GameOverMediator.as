@@ -12,11 +12,9 @@ package com.garfty.asteroids.userinterface.views
 	import com.garfty.asteroids.userinterface.signals.DisplayGameOverSignal;
 	import com.garfty.asteroids.userinterface.signals.DisplayMainMenuSignal;
 
-	import org.robotlegs.mvcs.StarlingMediator;
-
 	import starling.events.Event;
 
-	public class GameOverMediator extends StarlingMediator
+	public class GameOverMediator extends AsteroidsMediatorBase
 	{
 		[Inject]
 		public var view:GameOverView;

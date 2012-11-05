@@ -4,7 +4,7 @@
  */
 package com.garfty.asteroids.userinterface.views
 {
-	public class BackgroundMediator extends MediatorBase
+	public class BackgroundMediator extends AsteroidsMediatorBase
 	{
 		[Inject]
 		public var view:BackgroundView;

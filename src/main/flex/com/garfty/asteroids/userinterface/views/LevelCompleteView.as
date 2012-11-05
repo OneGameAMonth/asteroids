@@ -8,8 +8,6 @@
 package com.garfty.asteroids.userinterface.views
 {
 
-	import flash.display.Bitmap;
-
 	import starling.display.Button;
 	import starling.display.Sprite;
 	import starling.events.Event;
@@ -17,24 +15,22 @@ package com.garfty.asteroids.userinterface.views
 
 	public class LevelCompleteView extends Sprite
 	{
-		[Embed(source="/../../main/resources/images/texture.png")]
-		private static const ButtonTexture:Class;
-
 		public var continueButton:Button;
 
 
 		public function LevelCompleteView()
 		{
-			this.addEventListener(Event.ADDED_TO_STAGE, init);
+			this.visible = false;
 
-			var buttonSkin:Bitmap = new ButtonTexture();
-			var texture:Texture = Texture.fromBitmap(buttonSkin);
-
-			this.addEventListener(Event.ADDED_TO_STAGE, init);
-
-			continueButton = new Button(texture, "Play!");
+			continueButton = new Button(Texture.empty(150, 50, 0xFFFFFF), "CONTINUE");
+			continueButton.fontName = "Edit Undo Line";
+			continueButton.fontSize = 40;
+			continueButton.y = 60;
+			continueButton.fontColor = 0xE00278;
 			continueButton.useHandCursor = true;
 			addChild(continueButton);
+
+			this.addEventListener(Event.ADDED_TO_STAGE, init);
 		}
 
 
@@ -43,7 +39,7 @@ package com.garfty.asteroids.userinterface.views
 			this.removeEventListener(Event.ADDED_TO_STAGE, init);
 
 			continueButton.x = (stage.stageWidth - continueButton.width)*.5;
-			continueButton.y = (stage.stageHeight - continueButton.height)*.5;
+			continueButton.y = 410;
 		}
 
 
