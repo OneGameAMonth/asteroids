@@ -11,7 +11,7 @@ package com.garfty.asteroids.game.signals
   {
     public function StartGameSignal()
     {
-      super();
+      super(String);
     }
   }
 }
